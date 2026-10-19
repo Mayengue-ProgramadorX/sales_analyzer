@@ -1,0 +1,34 @@
+NOTES – Sales Analyzer Project
+
+✔ CSV lido com DictReader
+✔ Lista content contém cada linha como dicionário
+✔ Campos: date, product, quantity, price
+
+Próximos passos (do professor):
+- Converter quantity para int
+- Converter price para float
+
+Cálculos obrigatórios:
+- total revenue → soma de (quantity × price) para todas as linhas
+- revenue per product → agrupar por produto e somar revenue
+- total quantity sold per product → agrupar por produto e somar quantity
+- day with highest total revenue → agrupar por date e somar revenue
+
+Arquivos de saída obrigatórios:
+- sales_report.txt → resumo formatado
+- product_summary.csv → colunas: product, total_quantity, total_revenue
+
+Entregáveis finais:
+- sales_analyzer.py funcionando
+- sales_report.txt gerado
+- product_summary.csv gerado
+
+
+Observações:
+- Widget A aparece em todos os dias → bom para testar agrupamento por produto.
+- Widget C tem preço mais alto → revenue maior por unidade.
+- quantity e price vêm como string → converter para int e float.
+- Datas repetidas → preciso somar revenue por dia.
+- revenue = quantity * price → calcular antes de agrupar.
+- CSV está limpo, sem linhas faltando → não preciso validar dados agora.
+
