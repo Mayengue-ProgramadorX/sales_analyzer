@@ -29,8 +29,8 @@ with open("sales_data.csv", "r") as file:
         quantity_by_product[product] = quantity_by_product.get(product, 0) + quantity  
         revenue_by_day[date] = revenue_by_day.get(date, 0) + revenue
 
-        # Finds the day with the highest total revenue by selecting the key whose value is the largest.
-        best_day = max(revenue_by_day, key=revenue_by_day.get)
+    # Finds the day with the highest total revenue by selecting the key whose value is the largest.
+    best_day = max(revenue_by_day, key=revenue_by_day.get)
 
 
 
@@ -47,3 +47,20 @@ with open("sales_report.txt", "w") as file:
         file.write(f"  - {product}: {qty}\n")
 
     file.write(f"\nBest Day: {best_day}\n")
+
+
+
+# Writes a CSV summary with one row per product, including total quantity and total revenue.
+with open("product_summary.csv", "w", newline="") as file:
+    writer = csv.writer(file)
+
+    # Header row
+    writer.writerow(["product", "total_quantity", "total_revenue"])
+
+    # One row per product
+    for product in revenue_by_product:
+        writer.writerow([
+            product,
+            quantity_by_product[product],
+            f"{revenue_by_product[product]:.2f}"   # format to 2 decimal place
+        ])
