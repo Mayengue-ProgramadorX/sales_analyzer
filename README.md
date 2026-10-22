@@ -1,4 +1,4 @@
-# Title – #ales_Processor
+# Title – # Sales_Processor
 
 **This project processes sales data and generates two reports**:
 a human‑readable text summary **(sales_report.txt)** and a structured CSV summary **(product_summary.csv).**
